@@ -5,7 +5,7 @@ CFLAGS = -c -Wall -Wextra -Werror
 CPPFLAGS = -Iinclude
 
 SRCDIR = src
-SRCFILES = vec2.c
+SRCFILES = vec2.c vec3.c vec4.c
 SRCS = $(addprefix $(SRCDIR)/, $(SRCFILES))
 
 OBJDIR = obj
