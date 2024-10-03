@@ -5,7 +5,7 @@ CFLAGS = -c -Wall -Wextra -Werror
 CPPFLAGS = -Iinclude
 
 SRCDIR = src
-SRCFILES = vec2.c vec3.c vec4.c
+SRCFILES = vec2.c vec3.c vec4.c vector_utils.c
 SRCS = $(addprefix $(SRCDIR)/, $(SRCFILES))
 
 OBJDIR = obj
@@ -14,6 +14,8 @@ OBJS = $(addprefix $(OBJDIR)/, $(OBJFILES))
 
 AR = ar
 AFLAGS = -crs
+
+DEPDIR = dep
 
 all: CFLAGS += -O3
 all: $(NAME)
@@ -35,4 +37,12 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+setup_libft: | $(DEPDIR)
+	@make -C ../libft all
+	@cp ../libft/libft.h ./include
+	@cp ../libft/libft.a $(DEPDIR)
+
+$(DEPDIR):
+	@mkdir -p $(DEPDIR)
+
+.PHONY: all clean fclean re setup_libft
