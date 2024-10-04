@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:46:31 by mfelida           #+#    #+#             */
-/*   Updated: 2024/09/27 18:21:30 by mfelida          ###   ########.fr       */
+/*   Updated: 2024/10/04 22:57:59 by mfelida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_vec2	vec2_add(t_vec2 a, t_vec2 b)
 
 float	vec2_dot(t_vec2 a, t_vec2 b)
 {
-	return (a.x * b.x + a.y + b.y);
+	return (a.x * b.x + a.y * b.y);
 }
 
 float	vec2_length(t_vec2 v)
