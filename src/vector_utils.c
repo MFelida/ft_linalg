@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 21:08:17 by mfelida           #+#    #+#             */
-/*   Updated: 2024/10/03 22:58:17 by mfelida          ###   ########.fr       */
+/*   Updated: 2024/10/04 12:57:25 by mfelida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*vecx_to_str(size_t n, size_t n_dec, float elems[])
 {
 	char	*temp;
 	char	*res;
-	char	*old;
+	char	*prev;
 	size_t	i;
 
 	res = ft_strdup("[");
@@ -33,18 +33,18 @@ char	*vecx_to_str(size_t n, size_t n_dec, float elems[])
 			free(res);
 			return (NULL);
 		}
-		old = res;
+		prev = res;
 		res = ft_strjoin(res, temp);
-		free(old);
+		free(prev);
 		free(temp);
 		if (!res)
 			return (NULL);
-		old = res;
+		prev = res;
 		if (i < n)
 			res = ft_strjoin(res, ", ");
 		else
 			res = ft_strjoin(res, "]");
-		free(old);
+		free(prev);
 		if (!res)
 			return (NULL);
 	}
