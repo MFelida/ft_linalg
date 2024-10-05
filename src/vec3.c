@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:32:30 by mfelida           #+#    #+#             */
-/*   Updated: 2024/09/27 18:31:38 by mfelida          ###   ########.fr       */
+/*   Updated: 2024/10/05 12:05:34 by mfelida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ float	vec3_dot(t_vec3 a, t_vec3 b)
 
 float	vec3_length(t_vec3 v)
 {
-	return (sqrtf(v.x * v.x + v.y * v.y + v.z + v.z));
+	return (sqrtf(v.x * v.x + v.y * v.y + v.z * v.z));
 }
 
 t_vec3	vec3_normalize(t_vec3 v)
