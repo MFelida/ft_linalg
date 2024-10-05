@@ -1,5 +1,6 @@
 .cache/
 compile_commands.json
+*test*
 
 obj/
 libft_linalg.a
