@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:39:51 by mfelida           #+#    #+#             */
-/*   Updated: 2024/09/27 18:33:43 by mfelida          ###   ########.fr       */
+/*   Updated: 2024/10/05 12:00:09 by mfelida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_vec4	vec4_add(t_vec4 a, t_vec4 b)
 
 float vec4_dot(t_vec4 a, t_vec4 b)
 {
-	return (a.x + b.x + a.y + b.y + a.z * b.z + a.w * b.w);
+	return (a.x * b.x + a.y * b.y + a.z * b.z + a.w * b.w);
 }
 
 float vec4_length(t_vec4 v)
