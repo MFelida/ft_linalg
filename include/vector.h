@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:30:58 by mfelida           #+#    #+#             */
-/*   Updated: 2024/09/27 18:21:25 by mfelida          ###   ########.fr       */
+/*   Updated: 2024/10/05 13:39:44 by mfelida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,4 @@ float	vec4_dot(t_vec4 a, t_vec4 b);
 float	vec4_length(t_vec4 v);
 t_vec4	vec4_normalize(t_vec4 v);
 
-#endif
+#endif // !VECTOR_H
