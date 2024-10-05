@@ -5,7 +5,8 @@ CFLAGS = -c -Wall -Wextra -Werror
 CPPFLAGS = -Iinclude
 
 SRCDIR = src
-SRCFILES = vec2.c vec3.c vec4.c vector_utils.c
+SRCFILES = vec2.c vec3.c vec4.c vector_utils.c \
+		mat2.c mat_col_to_vec.c mat_row_to_vec.c 
 SRCS = $(addprefix $(SRCDIR)/, $(SRCFILES))
 
 OBJDIR = obj
