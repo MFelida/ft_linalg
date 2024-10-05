@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:06:27 by mfelida           #+#    #+#             */
-/*   Updated: 2024/10/05 14:35:28 by mfelida          ###   ########.fr       */
+/*   Updated: 2024/10/06 01:06:31 by mfelida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ t_mat4	mat4_multiply(t_mat4 a, t_mat4 b)
 	t_mat4	res;
 
 	i = 0;
-	j = 0;
 	while (i < MAT4_N_DIMS)
 	{
+		j = 0;
 		while (j < MAT4_N_DIMS)
 		{
 			res.elements[i][j] = vec4_dot(mat4_col_to_vec(a, j),
