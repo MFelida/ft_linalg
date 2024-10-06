@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:06:27 by mfelida           #+#    #+#             */
-/*   Updated: 2024/10/06 00:39:34 by mfelida          ###   ########.fr       */
+/*   Updated: 2024/10/06 14:49:32 by mfelida          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ t_mat2	mat2_multiply(t_mat2 a, t_mat2 b)
 		j = 0;
 		while (j < MAT2_N_DIMS)
 		{
-			res.elements[i][j] = vec2_dot(mat2_col_to_vec(a, j),
-								mat2_row_to_vec(b, i));
+			res.elements[i][j] = vec2_dot(mat2_row_to_vec(a, i),
+								mat2_col_to_vec(b, j));
 			++j;
 		}
 		++i;
