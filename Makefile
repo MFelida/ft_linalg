@@ -2,7 +2,7 @@ NAME = libft_linalg.a
 
 CC = cc
 CFLAGS = -c -Wall -Wextra -Werror
-CPPFLAGS = -Iinclude
+CPPFLAGS = -Iinclude -I../libft
 
 SRCDIR = src
 SRCFILES = vec2.c vec3.c vec4.c vector_utils.c \
@@ -37,11 +37,6 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
-
-setup_libft: | $(DEPDIR)
-	@make -C ../libft all
-	@cp ../libft/libft.h ./include
-	@cp ../libft/libft.a $(DEPDIR)
 
 $(DEPDIR):
 	@mkdir -p $(DEPDIR)
