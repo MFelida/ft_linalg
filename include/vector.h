@@ -6,12 +6,13 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:30:58 by mfelida           #+#    #+#             */
-/*   Updated: 2024/10/05 13:39:44 by mfelida          ###   ########.fr       */
+/*   Updated: 2025/03/03 12:52:14 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VECTOR_H
 # define VECTOR_H
+
 typedef union u_vec2
 {
 	struct
@@ -22,7 +23,7 @@ typedef union u_vec2
 	float	elements[2];
 }	t_vec2;
 
-typedef	union u_vec3
+typedef union u_vec3
 {
 	struct
 	{
@@ -34,7 +35,7 @@ typedef	union u_vec3
 	float	elements[3];
 }	t_vec3;
 
-typedef union u_vec4 
+typedef union u_vec
 {
 	struct
 	{
@@ -46,7 +47,7 @@ typedef union u_vec4
 	t_vec3	xyz;
 	t_vec2	xy;
 	float	elements[4];
-} t_vec4;
+}	t_vec4;
 
 // t_vec2 funcs
 t_vec2	vec2_add(t_vec2 a, t_vec2 b);

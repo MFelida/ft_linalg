@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 00:18:01 by mfelida           #+#    #+#             */
-/*   Updated: 2024/10/06 01:03:24 by mfelida          ###   ########.fr       */
+/*   Updated: 2025/03/03 13:09:17 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*mat2_to_str(t_mat2 m, int n_dec)
 	char	*prev;
 	char	*temp;
 	int		i;
-	
+
 	res = ft_strdup("");
 	prev = res;
 	i = 0;
@@ -47,7 +47,7 @@ char	*mat3_to_str(t_mat3 m, int n_dec)
 	char	*prev;
 	char	*temp;
 	int		i;
-	
+
 	res = ft_strdup("");
 	prev = res;
 	i = 0;
@@ -71,7 +71,7 @@ char	*mat4_to_str(t_mat4 m, int n_dec)
 	char	*prev;
 	char	*temp;
 	int		i;
-	
+
 	res = ft_strdup("");
 	prev = res;
 	i = 0;

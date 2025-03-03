@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:06:27 by mfelida           #+#    #+#             */
-/*   Updated: 2024/10/06 14:47:56 by mfelida          ###   ########.fr       */
+/*   Updated: 2025/03/03 13:07:57 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 #define MAT4_N_DIMS		4
 #define MAT4_N_ELEMS	16
-
 
 t_mat4	mat4_identity(void)
 {
@@ -54,6 +53,18 @@ t_mat4	mat4_scalar_mult(t_mat4 a, float s)
 	return (a);
 }
 
+t_mat4	mat4_scale(float x, float y, float z, float w)
+{
+	t_mat4	m;
+
+	m = mat4_identity();
+	m.m00 = x;
+	m.m11 = y;
+	m.m22 = z;
+	m.m33 = w;
+	return (m);
+}
+
 t_mat4	mat4_multiply(t_mat4 a, t_mat4 b)
 {
 	int		i;
@@ -67,7 +78,7 @@ t_mat4	mat4_multiply(t_mat4 a, t_mat4 b)
 		while (j < MAT4_N_DIMS)
 		{
 			res.elements[i][j] = vec4_dot(mat4_row_to_vec(a, i),
-								mat4_col_to_vec(b, j));
+					mat4_col_to_vec(b, j));
 			++j;
 		}
 		++i;

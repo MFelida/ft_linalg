@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:06:27 by mfelida           #+#    #+#             */
-/*   Updated: 2024/10/06 14:49:02 by mfelida          ###   ########.fr       */
+/*   Updated: 2025/03/03 13:08:12 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #define MAT3_N_DIMS		3
 #define MAT3_N_ELEMS	9
 
-
 t_mat3	mat3_identity(void)
 {
 	t_mat3	res;
@@ -26,7 +25,7 @@ t_mat3	mat3_identity(void)
 	ft_bzero(&res, sizeof(t_mat3));
 	res.m00 = 1;
 	res.m11 = 1;
-	res.m22	= 1;
+	res.m22 = 1;
 	return (res);
 }
 
@@ -53,6 +52,17 @@ t_mat3	mat3_scalar_mult(t_mat3 a, float s)
 	return (a);
 }
 
+t_mat3	mat3_scale(float x, float y, float z)
+{
+	t_mat3	m;
+
+	m = mat3_identity();
+	m.m00 = x;
+	m.m11 = y;
+	m.m22 = z;
+	return (m);
+}
+
 t_mat3	mat3_multiply(t_mat3 a, t_mat3 b)
 {
 	int		i;
@@ -66,7 +76,7 @@ t_mat3	mat3_multiply(t_mat3 a, t_mat3 b)
 		while (j < MAT3_N_DIMS)
 		{
 			res.elements[i][j] = vec3_dot(mat3_row_to_vec(a, i),
-								mat3_col_to_vec(b, j));
+					mat3_col_to_vec(b, j));
 			++j;
 		}
 		++i;

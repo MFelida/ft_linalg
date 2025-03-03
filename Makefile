@@ -13,7 +13,9 @@ OBJDIR = obj
 OBJFILES = $(SRCFILES:.c=.o)
 OBJS = $(addprefix $(OBJDIR)/, $(OBJFILES))
 
+ifndef LIBFTDIR
 LIBFTDIR = ./libft
+endif
 
 AR = ar
 AFLAGS = -crs
@@ -26,11 +28,11 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(AR) $(AFLAGS) $(NAME) $(OBJS)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(LIBFTDIR) | $(OBJDIR)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(LIBFTDIR) $(OBJDIR)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
 $(LIBFTDIR):
-	@ git clone -b inc_math git@github.com:/MFelida/libft.git
+	@ git clone -b inc_math git@github.com:/MFelida/libft.git $(LIBFTDIR)
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
