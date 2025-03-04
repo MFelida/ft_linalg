@@ -6,14 +6,14 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:30:58 by mfelida           #+#    #+#             */
-/*   Updated: 2025/03/04 10:52:09 by mifelida         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:32:32 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VECTOR_H
 # define VECTOR_H
 
-#include "matrix.h"
+# include "matrix.h"
 
 typedef union u_vec2
 {
@@ -56,7 +56,7 @@ t_vec2	vec2_add(t_vec2 a, t_vec2 b);
 float	vec2_dot(t_vec2 a, t_vec2 b);
 float	vec2_length(t_vec2 v);
 t_vec2	vec2_normalize(t_vec2 v);
-t_vec2	vec2_transform(t_mat2 m , t_vec2 v);
+t_vec2	vec2_transform(t_mat2 m, t_vec2 v);
 
 // t_vec3 funcs
 t_vec3	vec3_add(t_vec3 a, t_vec3 b);
@@ -64,13 +64,13 @@ float	vec3_dot(t_vec3 a, t_vec3 b);
 float	vec3_length(t_vec3 v);
 t_vec3	vec3_normalize(t_vec3 v);
 t_vec3	vec3_cross(t_vec3 a, t_vec3 b);
-t_vec3	vec3_transform(t_mat3 m , t_vec3 v);
+t_vec3	vec3_transform(t_mat3 m, t_vec3 v);
 
 // t_vec4 funcs
 t_vec4	vec4_add(t_vec4 a, t_vec4 b);
 float	vec4_dot(t_vec4 a, t_vec4 b);
 float	vec4_length(t_vec4 v);
 t_vec4	vec4_normalize(t_vec4 v);
-t_vec4	vec4_transform(t_mat4 m , t_vec4 v);
+t_vec4	vec4_transform(t_mat4 m, t_vec4 v);
 
 #endif // !VECTOR_H
