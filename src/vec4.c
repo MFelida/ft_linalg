@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:39:51 by mfelida           #+#    #+#             */
-/*   Updated: 2025/03/03 13:08:45 by mifelida         ###   ########.fr       */
+/*   Updated: 2025/03/05 15:28:06 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,19 @@ float	vec4_length(t_vec4 v)
 	return (sqrtf(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w));
 }
 
+t_vec4	vec4_scale(t_vec4 v, float s)
+{
+	v.x *= s;
+	v.y *= s;
+	v.z *= s;
+	v.w *= s;
+	return (v);
+}
+
 t_vec4	vec4_normalize(t_vec4 v)
 {
 	float	len;
 
 	len = vec4_length(v);
-	return ((t_vec4){.x = v.x / len,
-		.y = v.y / len,
-		.z = v.z / len,
-		.w = v.w / len});
+	return (vec4_scale(v, 1.0f / len));
 }

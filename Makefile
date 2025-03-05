@@ -5,7 +5,7 @@ CFLAGS = -c -Wall -Wextra -Werror
 CPPFLAGS = -Iinclude -I$(LIBFTDIR)
 
 SRCDIR = src
-SRCFILES = vec2.c vec3.c vec4.c vector_utils.c vec_transform.c\
+SRCFILES = vec2.c vec3.c vec3_cross.c vec4.c vector_utils.c vec_transform.c\
 		mat2.c mat3.c mat4.c mat_col_to_vec.c mat_row_to_vec.c mat_to_str.c\
 		mat23_rotate.c mat4_rotate.c
 SRCS = $(addprefix $(SRCDIR)/, $(SRCFILES))
