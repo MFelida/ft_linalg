@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:46:43 by mfelida           #+#    #+#             */
-/*   Updated: 2025/03/03 23:18:53 by mifelida         ###   ########.fr       */
+/*   Updated: 2025/03/06 14:44:28 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ t_mat4	mat4_multiply(t_mat4 a, t_mat4 b);
 t_mat4	mat4_rotx(float rad);
 t_mat4	mat4_roty(float rad);
 t_mat4	mat4_rotz(float rad);
+t_mat4	mat4_translate(float x, float y, float z);
 
 #endif // !MATRIX_H
