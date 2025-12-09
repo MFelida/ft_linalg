@@ -14,17 +14,16 @@ OBJDIR = obj
 OBJFILES = $(SRCFILES:.c=.o)
 OBJS = $(addprefix $(OBJDIR)/, $(OBJFILES))
 
-ifndef LIBFTDIR
 LIBFTDIR = ./libft
-endif
 
 AR = ar
 AFLAGS = -crs
 
-DEPDIR = dep
-
 all: CFLAGS += -O3
 all: $(NAME)
+
+debug: CFLAGS += -O0 -g -DDEBUG
+debug: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(AFLAGS) $(NAME) $(OBJS)
@@ -32,8 +31,8 @@ $(NAME): $(OBJS)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(LIBFTDIR) $(OBJDIR)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
-$(LIBFTDIR):
-	@ git clone -b inc_math git@github.com:/MFelida/libft.git $(LIBFTDIR)
+$(LIBFTDIR) $(LIBFT_DIR)/libft.h:
+	@ git clone -b inc_math git@github.com:/MFelida/libft.git $(LIBFT_DIR)
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
@@ -45,8 +44,5 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
-
-$(DEPDIR):
-	@mkdir -p $(DEPDIR)
 
 .PHONY: all clean fclean re
