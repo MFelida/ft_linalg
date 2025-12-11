@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "matrix.h"
+#include "vector.h"
 
 #include <math.h>
 
@@ -60,4 +61,24 @@ t_mat3	mat3_rotz(float rad)
 	m.m10 = -sinf(rad);
 	m.m11 = cosf(rad);
 	return (m);
+}
+
+t_mat3	t_mat3_rot_axis(float rad, t_vec3 u)
+{
+	float	c;
+	float	s;
+	float	_c;
+
+	c = cosf(rad);
+	_c = 1 - c;
+	s = sinf(rad);
+	u = vec3_normalize(u);
+	return ((t_mat3){.flat = {
+			u.x * u.x * _c + c, u.x * u.y * _c - u.z * s,
+			u.x * u.z * _c + u.y * s,
+			u.x * u.y * _c + u.z * s, u.y * u.y * _c + c,
+			u.y * u.z * _c - u.x * s,
+			u.x * u.z * _c - u.z * s, u.y * u.z * _c + u.x * s,
+			u.z * u.z * _c + c
+		}});
 }
