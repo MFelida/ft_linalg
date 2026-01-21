@@ -6,12 +6,13 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:06:27 by mfelida           #+#    #+#             */
-/*   Updated: 2025/03/03 13:08:12 by mifelida         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:02:34 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "matrix.h"
+#include "ft_linalg.h"
 #include "libft.h"
+#include "matrix.h"
 #include "matrix_utils.h"
 #include "vector.h"
 
@@ -42,7 +43,7 @@ t_mat3	mat3_add(t_mat3 a, t_mat3 b)
 	return (a);
 }
 
-t_mat3	mat3_scalar_mult(t_mat3 a, float s)
+t_mat3	mat3_scalar_mult(t_mat3 a, t_real s)
 {
 	int	i;
 
@@ -52,7 +53,7 @@ t_mat3	mat3_scalar_mult(t_mat3 a, float s)
 	return (a);
 }
 
-t_mat3	mat3_scale(float x, float y, float z)
+t_mat3	mat3_scale(t_real x, t_real y, t_real z)
 {
 	t_mat3	m;
 
@@ -75,7 +76,7 @@ t_mat3	mat3_multiply(t_mat3 a, t_mat3 b)
 		j = 0;
 		while (j < MAT3_N_DIMS)
 		{
-			res.elements[i][j] = vec3_dot(mat3_row_to_vec(a, i),
+			res.a[i][j] = vec3_dot(mat3_row_to_vec(a, i),
 					mat3_col_to_vec(b, j));
 			++j;
 		}

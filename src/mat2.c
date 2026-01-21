@@ -6,12 +6,13 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:06:27 by mfelida           #+#    #+#             */
-/*   Updated: 2025/03/03 13:07:26 by mifelida         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:02:17 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "matrix.h"
+#include "ft_linalg.h"
 #include "libft.h"
+#include "matrix.h"
 #include "matrix_utils.h"
 #include "vector.h"
 
@@ -41,7 +42,7 @@ t_mat2	mat2_add(t_mat2 a, t_mat2 b)
 	return (a);
 }
 
-t_mat2	mat2_scalar_mult(t_mat2 a, float s)
+t_mat2	mat2_scalar_mult(t_mat2 a, t_real s)
 {
 	int	i;
 
@@ -51,7 +52,7 @@ t_mat2	mat2_scalar_mult(t_mat2 a, float s)
 	return (a);
 }
 
-t_mat2	mat2_scale(float x, float y)
+t_mat2	mat2_scale(t_real x, t_real y)
 {
 	t_mat2	m;
 
@@ -73,7 +74,7 @@ t_mat2	mat2_multiply(t_mat2 a, t_mat2 b)
 		j = 0;
 		while (j < MAT2_N_DIMS)
 		{
-			res.elements[i][j] = vec2_dot(mat2_row_to_vec(a, i),
+			res.a[i][j] = vec2_dot(mat2_row_to_vec(a, i),
 					mat2_col_to_vec(b, j));
 			++j;
 		}

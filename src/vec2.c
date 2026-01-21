@@ -6,39 +6,40 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 16:46:31 by mfelida           #+#    #+#             */
-/*   Updated: 2025/03/05 15:26:58 by mifelida         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:09:55 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_linalg.h"
 #include "vector.h"
 
 #include <math.h>
 
 t_vec2	vec2_add(t_vec2 a, t_vec2 b)
 {
-	return ((t_vec2){.x = a.x + b.x, .y = a.y + b.y});
+	return ((t_vec2)(a.v + b.v));
 }
 
-float	vec2_dot(t_vec2 a, t_vec2 b)
+t_real	vec2_dot(t_vec2 a, t_vec2 b)
 {
-	return (a.x * b.x + a.y * b.y);
+	a.v *= b.v;
+	return (a.x + a.y);
 }
 
-float	vec2_length(t_vec2 v)
+t_real	vec2_length(t_vec2 v)
 {
-	return (sqrtf(v.x * v.x + v.y * v.y));
+	v.v += v.v;
+	return (sqrtf(v.x + v.y));
 }
 
-t_vec2	vec2_scale(t_vec2 v, float s)
+t_vec2	vec2_scale(t_vec2 v, t_real s)
 {
-	v.x *= s;
-	v.y *= s;
-	return (v);
+	return ((t_vec2)(v.v * (t_v2sr){s, s}));
 }
 
 t_vec2	vec2_normalize(t_vec2 v)
 {
-	float	len;
+	t_real	len;
 
 	len = vec2_length(v);
 	return (vec2_scale(v, 1.0f / len));

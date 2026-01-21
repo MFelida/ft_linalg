@@ -6,7 +6,7 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:49:35 by mfelida           #+#    #+#             */
-/*   Updated: 2024/10/05 14:05:31 by mfelida          ###   ########.fr       */
+/*   Updated: 2026/01/21 14:03:18 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_vec2	mat2_row_to_vec(t_mat2 m, int row)
 	i = 0;
 	while (i < 2)
 	{
-		res.elements[i] = m.elements[row][i];
+		res.a[i] = m.a[row][i];
 		++i;
 	}
 	return (res);
@@ -35,7 +35,7 @@ t_vec3	mat3_row_to_vec(t_mat3 m, int row)
 	i = 0;
 	while (i < 3)
 	{
-		res.elements[i] = m.elements[row][i];
+		res.a[i] = m.a[row][i];
 		++i;
 	}
 	return (res);
@@ -49,7 +49,7 @@ t_vec4	mat4_row_to_vec(t_mat4 m, int row)
 	i = 0;
 	while (i < 4)
 	{
-		res.elements[i] = m.elements[row][i];
+		res.a[i] = m.a[row][i];
 		++i;
 	}
 	return (res);

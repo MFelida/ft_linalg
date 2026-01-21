@@ -6,13 +6,14 @@
 /*   By: mifelida <mifelida@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:41:45 by mifelida          #+#    #+#             */
-/*   Updated: 2025/03/06 14:54:58 by mifelida         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:01:33 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_linalg.h"
 #include "matrix.h"
 
-t_mat4	mat4_translate(float x, float y, float z)
+t_mat4	mat4_translate(t_real x, t_real y, t_real z)
 {
 	t_mat4	res;
 

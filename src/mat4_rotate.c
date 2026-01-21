@@ -6,16 +6,17 @@
 /*   By: mifelida <mifelida@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 23:13:41 by mifelida          #+#    #+#             */
-/*   Updated: 2025/03/03 23:16:08 by mifelida         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:03:01 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_linalg.h"
 #include "matrix.h"
 
 #include <math.h>
 
 // Rotations are perform counter-clockwise when viewed from the positive axis
-t_mat4	mat4_rotx(float rad)
+t_mat4	mat4_rotx(t_real rad)
 {
 	t_mat4	m;
 
@@ -27,7 +28,7 @@ t_mat4	mat4_rotx(float rad)
 	return (m);
 }
 
-t_mat4	mat4_roty(float rad)
+t_mat4	mat4_roty(t_real rad)
 {
 	t_mat4	m;
 
@@ -39,7 +40,7 @@ t_mat4	mat4_roty(float rad)
 	return (m);
 }
 
-t_mat4	mat4_rotz(float rad)
+t_mat4	mat4_rotz(t_real rad)
 {
 	t_mat4	m;
 

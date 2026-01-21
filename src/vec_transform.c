@@ -6,13 +6,13 @@
 /*   By: mifelida <mifelida@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 10:37:36 by mifelida          #+#    #+#             */
-/*   Updated: 2025/03/04 10:42:47 by mifelida         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:01:54 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "matrix.h"
 #include "matrix_utils.h"
 #include "vector.h"
-#include "matrix.h"
 
 t_vec2	vec2_transform(t_mat2 m, t_vec2 v)
 {

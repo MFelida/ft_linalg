@@ -7,6 +7,7 @@ ft_linalg is a lightweight linear algebra library implemented in C, designed for
 - Vector and matrix operations using union-based structures
 - Support for 2D, 3D, and 4D vectors
 - Support for 2x2, 3x3, and 4x4 matrices
+- All types are SIMD compatible
 - Basic vector operations (addition, dot product, cross product, normalization)
 - Basic matrix operations (multiplication, transpose, inverse)
 - Simple transformation functions (translation, rotation, scaling)

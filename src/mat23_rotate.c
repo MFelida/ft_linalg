@@ -6,16 +6,17 @@
 /*   By: mifelida <mifelida@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 22:48:26 by mifelida          #+#    #+#             */
-/*   Updated: 2025/03/03 23:25:29 by mifelida         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:02:26 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_linalg.h"
 #include "matrix.h"
 #include "vector.h"
 
 #include <math.h>
 
-t_mat2	mat2_rot(float rad)
+t_mat2	mat2_rot(t_real rad)
 {
 	t_mat2	m;
 
@@ -27,7 +28,7 @@ t_mat2	mat2_rot(float rad)
 }
 
 // Rotations are perform counter-clockwise when viewed from the positive axis
-t_mat3	mat3_rotx(float rad)
+t_mat3	mat3_rotx(t_real rad)
 {
 	t_mat3	m;
 
@@ -39,7 +40,7 @@ t_mat3	mat3_rotx(float rad)
 	return (m);
 }
 
-t_mat3	mat3_roty(float rad)
+t_mat3	mat3_roty(t_real rad)
 {
 	t_mat3	m;
 
@@ -51,7 +52,7 @@ t_mat3	mat3_roty(float rad)
 	return (m);
 }
 
-t_mat3	mat3_rotz(float rad)
+t_mat3	mat3_rotz(t_real rad)
 {
 	t_mat3	m;
 
@@ -63,11 +64,11 @@ t_mat3	mat3_rotz(float rad)
 	return (m);
 }
 
-t_mat3	t_mat3_rot_axis(float rad, t_vec3 u)
+t_mat3	t_mat3_rot_axis(t_real rad, t_vec3 u)
 {
-	float	c;
-	float	s;
-	float	_c;
+	t_real	c;
+	t_real	s;
+	t_real	_c;
 
 	c = cosf(rad);
 	_c = 1 - c;

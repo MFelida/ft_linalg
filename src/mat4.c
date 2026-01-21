@@ -6,12 +6,13 @@
 /*   By: mfelida <mfelida@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:06:27 by mfelida           #+#    #+#             */
-/*   Updated: 2025/03/03 13:07:57 by mifelida         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:02:49 by mifelida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "matrix.h"
+#include "ft_linalg.h"
 #include "libft.h"
+#include "matrix.h"
 #include "matrix_utils.h"
 #include "vector.h"
 
@@ -43,7 +44,7 @@ t_mat4	mat4_add(t_mat4 a, t_mat4 b)
 	return (a);
 }
 
-t_mat4	mat4_scalar_mult(t_mat4 a, float s)
+t_mat4	mat4_scalar_mult(t_mat4 a, t_real s)
 {
 	int	i;
 
@@ -53,7 +54,7 @@ t_mat4	mat4_scalar_mult(t_mat4 a, float s)
 	return (a);
 }
 
-t_mat4	mat4_scale(float x, float y, float z, float w)
+t_mat4	mat4_scale(t_real x, t_real y, t_real z, t_real w)
 {
 	t_mat4	m;
 
@@ -77,7 +78,7 @@ t_mat4	mat4_multiply(t_mat4 a, t_mat4 b)
 		j = 0;
 		while (j < MAT4_N_DIMS)
 		{
-			res.elements[i][j] = vec4_dot(mat4_row_to_vec(a, i),
+			res.a[i][j] = vec4_dot(mat4_row_to_vec(a, i),
 					mat4_col_to_vec(b, j));
 			++j;
 		}
