@@ -19,24 +19,24 @@
 # define FT_FLOAT	32
 
 # if defined FT_REAL && FT_REAL == FT_LDOUBLE
-# define FT_REAL      FT_LDOUBLE
-# define REAL_MAX     LDBL_MAX
-# define REAL_MIN     LDBL_MIN
-# define REAL_EPSILON LDBL_EPSILON
+#  define FT_REAL      FT_LDOUBLE
+#  define REAL_MAX     LDBL_MAX
+#  define REAL_MIN     LDBL_MIN
+#  define REAL_EPSILON LDBL_EPSILON
 
-typedef long double												t_real;
+typedef long double													t_real;
 # elif defined FT_REAL && FT_REAL == FT_DOUBLE
-# define FT_REAL      FT_DOUBLE
-# define REAL_MAX     DBL_MAX
-# define REAL_MIN     DBL_MIN
-# define REAL_EPSILON DBL_EPSILON
+#  define FT_REAL      FT_DOUBLE
+#  define REAL_MAX     DBL_MAX
+#  define REAL_MIN     DBL_MIN
+#  define REAL_EPSILON DBL_EPSILON
 
-typedef double                           t_real;
+typedef double														t_real;
 # else
-# define FT_REAL      FT_FLOAT
-# define REAL_MAX     FLT_MAX
-# define REAL_MIN     FLT_MIN
-# define REAL_EPSILON FLT_EPSILON
+#  define FT_REAL      FT_FLOAT
+#  define REAL_MAX     FLT_MAX
+#  define REAL_MIN     FLT_MIN
+#  define REAL_EPSILON FLT_EPSILON
 
 typedef float														t_real;
 # endif
